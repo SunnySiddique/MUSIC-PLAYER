@@ -11,7 +11,9 @@ function App() {
     try {
       setIsLoading(true);
       const fetchData = await fetch(
-        `https://v1.nocodeapi.com/siddique/spotify/veMOAJvuyeefDkpr/search?q=${keyword}&type=track`
+        `https://v1.nocodeapi.com/favouritejoy/spotify/gFXhOgkDnFbgDhJl/search?q=${
+          keyword === "" ? "trending" : keyword
+        }&type=track`
       );
       const data = await fetchData.json();
       console.log(data);
