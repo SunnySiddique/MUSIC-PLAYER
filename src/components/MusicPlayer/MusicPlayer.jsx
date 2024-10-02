@@ -15,14 +15,14 @@ const imageVariants = {
   initial: { opacity: 0, scale: 0.1 },
   animate: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 0.8 },
-  transition: { duration: 0.6, delay: 1.2 },
+  transition: { duration: 0.6 },
 };
 
 const textVariants = {
   initial: { opacity: 0, y: 50 },
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: -50 },
-  transition: { duration: 0.6, delay: 1.2 },
+  transition: { duration: 0.6 },
 };
 
 const controlVariants = {
