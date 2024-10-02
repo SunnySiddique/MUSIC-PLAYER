@@ -1,0 +1,229 @@
+:root {
+  --primary-color: #e0e0e0;
+  --gray-color: #666;
+  --red-color: red;
+  --app-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.5),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  --button-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
+}
+
+.main-div {
+  position: relative;
+  /* width: 40px; */
+  box-shadow: var(--app-shadow);
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.main-div .playing-part {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-div .playing-part .img img {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 2rem;
+  object-fit: cover;
+  box-shadow: var(--app-shadow);
+  border-radius: 50%;
+  animation: rotate 4s linear infinite;
+  animation-play-state: paused;
+  user-select: none;
+  padding: 7px;
+}
+
+.main-div .playing-part .img img.playing {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main-div .control-part {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-div .control-part .song-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.name {
+  color: #4d4d4d;
+  font-size: 19px;
+  text-transform: capitalize;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.artist {
+  color: #4d4d4d;
+  font-size: 16px;
+  text-transform: capitalize;
+  margin-top: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.main-div .control-part .control-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 50px;
+}
+
+.btnC {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-shadow: var(--app-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.controls svg {
+  font-size: 18px;
+  user-select: none;
+  color: #232121;
+  font-weight: bold;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.controls .play-pause {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.play-pause:active,
+.btnC:active {
+  scale: 1.1;
+  box-shadow: -7px 2px 42px 0px rgba(187, 184, 184, 0.75);
+}
+
+.play-pause svg {
+  text-align: center;
+  color: #232121;
+}
+
+.play-pause {
+  box-shadow: var(--app-shadow);
+  color: black !important;
+}
+
+.range-slider {
+  width: 100%;
+  position: relative;
+  user-select: none;
+}
+
+.range-slider .timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timer span {
+  font-size: 10px;
+  color: #7c7d80;
+  font-weight: 800;
+  user-select: none;
+}
+
+/* Slmgder container */
+.slider {
+  -webkit-appearance: none;
+  height: 0.4rem;
+  width: 100%;
+  outline: none;
+  margin-top: 15px;
+  border-radius: 3px;
+  background-color: #3f89d3;
+  cursor: grab;
+}
+
+/* Slider thumb (handle) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 22px;
+  width: 22px;
+  background: #64affb;
+  border-radius: 50%;
+  border: 6px solid #e3edf7;
+  box-shadow: var(--app-shadow);
+  position: relative;
+  z-index: 2; /* Ensure it is above the progress */
+}
+
+.volume-control {
+  width: 100%;
+  height: 50px;
+  box-shadow: var(--app-shadow);
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  border-radius: 10px;
+  /* border: 1px solid #9fe7ff; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  z-index: 5;
+  transition: bottom 0.2s linear;
+  gap: 5px;
+  box-shadow: var(--app-shadow);
+}
+
+.volume-control.active {
+  bottom: 0;
+}
+
+.volume-control svg {
+  font-size: 20px;
+  color: #86898c;
+}
+
+.volume-control span {
+  color: #86898c;
+}

@@ -1,0 +1,93 @@
+:root {
+  --app-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.5),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+.list {
+  width: 100%;
+  position: absolute;
+  bottom: -60%;
+  left: 0;
+  background: #e3edf7;
+  box-shadow: var(--app-shadow);
+  color: #080710;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-out;
+  z-index: 99;
+}
+
+.list.show {
+  bottom: 0;
+}
+
+.list .header {
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list .header svg {
+  font-size: 1.7rem;
+}
+
+.list .header > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.list .header > div span {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  color: #444;
+}
+
+.list ul {
+  width: 100%;
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.list ul::-webkit-scrollbar {
+  width: 0px;
+}
+
+.list ul li {
+  width: 100%;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.list ul li:hover {
+  background: #b6d0eb;
+}
+
+.list ul li .row p {
+  color: #4d4d4d;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.list ul li span {
+  color: #4d4d4d;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.list .duration {
+  font-size: 0.9rem;
+}
+
+.list ul li.playing {
+  background: #b6d0eb;
+}
+
+.list svg {
+  color: #080710 !important;
+}
